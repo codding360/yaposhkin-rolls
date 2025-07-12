@@ -7,9 +7,9 @@ import {DarkKitchenSection} from "@/components/sections/DarkKitchenSection"
 import {IslandKitchenSection} from "@/components/sections/DarkKitchenSection"
 import {FranchiseSupportSection} from "@/components/sections/FranchiseSupportSection"
 import {SushiGallery} from "@/components/sections/GridGallerySection";
-import {ContactBarSection} from "@/components/sections/ContactBarSection";
 import FranchiseBannerSection from "@/components/sections/FranchiseBannerSection"
 import { FAQSection } from "@/components/sections/FAQSection"
+import { FooterSection } from "@/components/sections/FooterSection"
 
  async function Page() {
   return (
@@ -25,7 +25,7 @@ import { FAQSection } from "@/components/sections/FAQSection"
       <FAQSection/>
       <SushiGallery/>
       <img src="/seperator.png" alt="Section Separator" className="mx-auto" />
-      <ContactBarSection/>
+      <FooterSection/>
     </div>  
   )
 }

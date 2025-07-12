@@ -174,13 +174,6 @@ export function DarkKitchenSection() {
                           />
                         ))}
                       </div>
-    
-                      {/* Additional Floating Elements */}
-                      <div className="absolute top-6 right-6 flex space-x-2">
-                        <div className="w-2 h-2 rounded-full bg-white/80 animate-pulse" />
-                        <div className="w-2 h-2 rounded-full bg-white/60 animate-pulse delay-150" />
-                        <div className="w-2 h-2 rounded-full bg-white/40 animate-pulse delay-300" />
-                      </div>
 
                       {/* Full Screen Button - Bottom Right */}
                       <button
@@ -342,13 +335,6 @@ export function IslandKitchenSection() {
                       }`}
                     />
                   ))}
-                </div>
-
-                {/* Additional Floating Elements */}
-                <div className="absolute top-6 right-6 flex space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-white/80 animate-pulse" />
-                  <div className="w-2 h-2 rounded-full bg-white/60 animate-pulse delay-150" />
-                  <div className="w-2 h-2 rounded-full bg-white/40 animate-pulse delay-300" />
                 </div>
 
                 {/* Full Screen Button - Bottom Right */}

@@ -1,15 +1,11 @@
-"use client"
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { AppleAppStoreButton } from "@/components/ui/apple-app-store-button"
 import { PlayMarketButton } from "@/components/ui/play-market-button copy"
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter"
-import { useState } from "react";
 
 
 export function HeroSection() {
-  const [open, setOpen] = useState(false);
   return (
     <section className="relative min-h-screen">
 

@@ -21,10 +21,25 @@ function useDeviceType() {
 export function FranchiseBannerSection() {
   const device = useDeviceType();
   let src = "/Fhd.png";
-  if (device === 'mobile') src = "/iphone.png";
-  else if (device === 'tablet') src = "/ipad.png";
+  let digitsSrc = "/our-digits.png"
+
+  if (device === 'mobile') {
+    src = "/iphone.png";
+    digitsSrc = "our-digits-mobile.png"
+  }
+  else if (device === 'tablet') src = "/ipad.png"
+
+
   return (
     <section className="w-full">
+      <Image
+        src={digitsSrc}
+        alt="Our digits"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="mx-auto px-6 pt-10 w-full h-auto max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-5xl"
+      />
       <Image
         src={src}
         alt="Franchise Banner"

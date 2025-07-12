@@ -1,5 +1,4 @@
 import React from "react";
-import { Box, Rocket } from "lucide-react";
 import Image from "next/image";
 
 const cardStyle = "group relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/15 transition-all duration-300 flex flex-col items-center text-center";
