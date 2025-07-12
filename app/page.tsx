@@ -9,6 +9,7 @@ import {FranchiseSupportSection} from "@/components/sections/FranchiseSupportSec
 import {SushiGallery} from "@/components/sections/GridGallerySection";
 import {ContactBarSection} from "@/components/sections/ContactBarSection";
 import FranchiseBannerSection from "@/components/sections/FranchiseBannerSection"
+import { FAQSection } from "@/components/sections/FAQSection"
 
  async function Page() {
   return (
@@ -21,6 +22,7 @@ import FranchiseBannerSection from "@/components/sections/FranchiseBannerSection
       <img src="/seperator.png" alt="Section Separator" className="mx-auto" />
       <IslandKitchenSection/>
       <FranchiseSupportSection/>
+      <FAQSection/>
       <SushiGallery/>
       <img src="/seperator.png" alt="Section Separator" className="mx-auto" />
       <ContactBarSection/>

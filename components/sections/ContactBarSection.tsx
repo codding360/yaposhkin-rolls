@@ -5,7 +5,7 @@ import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 
 export function ContactBarSection() {
   return (
-    <footer className="w-full bg-[#4ee6ff] pt-12 pb-8 px-4 border-t border-white/20 relative overflow-hidden">
+    <footer className="w-full bg-[rgba(0, 152, 187, 0.85)] pt-12 pb-8 px-4 border-t border-white/20 relative overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
         {/* Logo */}
         <div className="flex-shrink-0 flex flex-col items-center md:items-start mb-6 md:mb-0 gap-2">

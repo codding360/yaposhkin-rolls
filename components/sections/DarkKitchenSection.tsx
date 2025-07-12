@@ -1,8 +1,61 @@
+"use client"
 import Image from "next/image";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useState, useEffect } from "react";
+import { Maximize2 } from "lucide-react";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+import { Button } from "@/components/ui/button";
 // import { FaShippingFast } from "react-icons/fa";
 // import { GiKitchenKnives } from "react-icons/gi";
 
+// Kitchen images for the carousel
+const kitchenImages = [
+  {
+    src: "/dark-1.png",
+    alt: "Modern Dark Kitchen - Interior View"
+  },
+  {
+    src: "/dark-2.png", 
+    alt: "Modern Dark Kitchen - Equipment Setup"
+  },
+  {
+    src: "/dark-3.png",
+    alt: "Modern Dark Kitchen - Workstation"
+  }
+];
+
+
+
 export function DarkKitchenSection() {
+    const [api, setApi] = useState<any>(null);
+    const [current, setCurrent] = useState(0);
+    const [isFullScreenOpen, setIsFullScreenOpen] = useState(false);
+
+    useEffect(() => {
+        if (!api) {
+            return;
+        }
+
+        api.on("select", () => {
+            setCurrent(api.selectedScrollSnap());
+        });
+    }, [api]);
+
+    // Prevent background scroll and handle Escape key
+    useEffect(() => {
+      if (!isFullScreenOpen) return;
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") setIsFullScreenOpen(false);
+      };
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }, [isFullScreenOpen]);
+
     return (
         <section
           className="relative w-full min-h-screen py-20 overflow-hidden"
@@ -45,35 +98,27 @@ export function DarkKitchenSection() {
                   <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-light">
                     Профессиональная кухня без зала для гостей, работающая только на доставку
                   </p>
-    
-                  <div className="inline-flex items-center space-x-3 px-6 py-3 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20">
-                    <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                    <span className="text-white font-medium">Площадь: 30-50 м²</span>
-                  </div>
                 </div>
     
                 {/* Stats Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="group relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="relative space-y-3">
-                      <div>
-                        <div className="text-white/80 text-sm font-medium uppercase tracking-wider">Сроки открытия</div>
-                        <div className="text-2xl md:text-3xl font-bold text-white mt-1">15-20 дней</div>
-                      </div>
-                    </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+                  <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
+                    <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Открытия</div>
+                    <div className="text-lg font-bold text-white mt-1">15-20 дней</div>
                   </div>
-    
-                  <div className="group relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="relative space-y-3">
-                      <div>
-                        <div className="text-white/80 text-sm font-medium uppercase tracking-wider">Инвестиции</div>
-                        <div className="text-2xl md:text-3xl font-bold text-white mt-1">От 1.4 млн ₽</div>
-                      </div>
-                    </div>
+                  <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
+                    <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Инвестиции</div>
+                    <div className="text-lg font-bold text-white mt-1">От 1.4 млн ₽</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
+                    <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Площадь</div>
+                    <div className="text-lg font-bold text-white mt-1">30-50 м²</div>
                   </div>
                 </div>
+                {/* Presentation Button */}
+                <Button className="w-full h-[70px] px-4 py-2 rounded-xl bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
+                  <span className="text-white">Получить презентацию</span>
+                </Button>
               </div>
     
               {/* Image Section - Takes 7 columns */}
@@ -84,37 +129,157 @@ export function DarkKitchenSection() {
                     {/* Glow Effect */}
                     <div className="absolute -inset-4 bg-gradient-to-r from-white/30 via-white/10 to-white/30 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
     
-                    {/* Image Frame */}
+                    {/* Carousel Frame */}
                     <div className="relative rounded-3xl overflow-hidden bg-white/10 backdrop-blur-xl border border-white/30 p-3">
-                      <div className="relative rounded-2xl overflow-hidden">
-                        <img
-                          src="/kitchen-1.png"
-                          alt="Modern Dark Kitchen"
-                          className="w-full h-[500px] md:h-[700px] object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
+                      <Carousel
+                        setApi={setApi}
+                        className="w-full"
+                        opts={{
+                          align: "start",
+                          loop: true,
+                        }}
+                      >
+                        <CarouselContent>
+                          {kitchenImages.map((image, index) => (
+                            <CarouselItem key={index}>
+                              <div className="relative rounded-2xl overflow-hidden">
+                                <img
+                                  src={image.src}
+                                  alt={image.alt}
+                                  className="w-full h-[500px] md:h-[700px] object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
     
-                        {/* Image Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                                {/* Image Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                              </div>
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        
+                        {/* Navigation Arrows */}
+                        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30" />
+                        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30" />
+                      </Carousel>
     
-                        {/* Floating UI Elements */}
-                        <div className="absolute top-6 left-6 flex space-x-2">
-                          <div className="w-3 h-3 rounded-full bg-white/80" />
-                          <div className="w-3 h-3 rounded-full bg-white/60" />
-                          <div className="w-3 h-3 rounded-full bg-white/40" />
-                        </div>
+                      {/* Floating UI Elements - Image Indicators */}
+                      <div className="absolute top-6 left-6 flex space-x-2">
+                        {kitchenImages.map((_, index) => (
+                          <div
+                            key={index}
+                            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                              current === index 
+                                ? 'bg-white scale-125' 
+                                : 'bg-white/60 hover:bg-white/80'
+                            }`}
+                          />
+                        ))}
                       </div>
+    
+                      {/* Additional Floating Elements */}
+                      <div className="absolute top-6 right-6 flex space-x-2">
+                        <div className="w-2 h-2 rounded-full bg-white/80 animate-pulse" />
+                        <div className="w-2 h-2 rounded-full bg-white/60 animate-pulse delay-150" />
+                        <div className="w-2 h-2 rounded-full bg-white/40 animate-pulse delay-300" />
+                      </div>
+
+                      {/* Full Screen Button - Bottom Right */}
+                      <button
+                        onClick={() => setIsFullScreenOpen(true)}
+                        className="absolute bottom-6 right-6 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all duration-300 hover:scale-110"
+                        title="View full screen"
+                      >
+                        <Maximize2 className="w-5 h-5" />
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>  
           </div>
+
+          {/* Full Screen Image Gallery */}
+          {isFullScreenOpen && (
+            <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
+              {/* Close Button */}
+              <button
+                onClick={() => setIsFullScreenOpen(false)}
+                className="absolute top-4 right-4 z-50 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all duration-300"
+                aria-label="Close gallery"
+              >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+              <div className="w-full max-w-4xl">
+                <ImageGallery
+                  items={kitchenImages.map(img => ({
+                    original: img.src,
+                    thumbnail: img.src,
+                    originalAlt: img.alt,
+                    thumbnailAlt: img.alt
+                  }))}
+                  startIndex={current}
+                  showPlayButton={false}
+                  showFullscreenButton={false}
+                  showNav={true}
+                  showThumbnails={false}
+                  showIndex={false}
+                  slideInterval={0}
+                  slideOnThumbnailOver={false}
+                  additionalClass="image-gallery-fullscreen"
+                />
+              </div>
+            </div>
+          )}
         </section>
       )
   }  
 
+// Island kitchen images for the carousel
+const islandKitchenImages = [
+  {
+    src: "/island-2.png",
+    alt: "Modern Island Kitchen - Interior View"
+  },
+  {
+    src: "/island-1.png", 
+    alt: "Modern Island Kitchen - Equipment Setup"
+  },
+  {
+    src: "/island-3.png",
+    alt: "Modern Island Kitchen - Workstation"
+  }
+];
+
 // New section for FORMAT ISLAND
 export function IslandKitchenSection() {
+  const [islandApi, setIslandApi] = useState<any>(null);
+  const [islandCurrent, setIslandCurrent] = useState(0);
+  const [isIslandFullScreenOpen, setIsIslandFullScreenOpen] = useState(false);
+
+  useEffect(() => {
+    if (!islandApi) {
+      return;
+    }
+
+    islandApi.on("select", () => {
+      setIslandCurrent(islandApi.selectedScrollSnap());
+    });
+  }, [islandApi]);
+
+  // Prevent background scroll and handle Escape key
+  useEffect(() => {
+    if (!isIslandFullScreenOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsIslandFullScreenOpen(false);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isIslandFullScreenOpen]);
+
+
   return (
     <section
       className="relative w-full min-h-screen py-20 overflow-hidden"
@@ -134,23 +299,66 @@ export function IslandKitchenSection() {
             <div className="relative group">
               {/* Glow Effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-white/30 via-white/10 to-white/30 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-              {/* Image Frame */}
+              {/* Carousel Frame */}
               <div className="relative rounded-3xl overflow-hidden bg-white/10 backdrop-blur-xl border border-white/30 p-3">
-                <div className="relative rounded-2xl overflow-hidden">
-                  <img
-                    src="/kitchen-2.png"
-                    alt="Modern Island Kitchen"
-                    className="w-full h-[500px] md:h-[700px] object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  {/* Image Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-                  {/* Floating UI Elements */}
-                  <div className="absolute top-6 left-6 flex space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-white/80" />
-                    <div className="w-3 h-3 rounded-full bg-white/60" />
-                    <div className="w-3 h-3 rounded-full bg-white/40" />
-                  </div>
+                <Carousel
+                  setApi={setIslandApi}
+                  className="w-full"
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                >
+                  <CarouselContent>
+                    {islandKitchenImages.map((image, index) => (
+                      <CarouselItem key={index}>
+                        <div className="relative rounded-2xl overflow-hidden">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-[500px] md:h-[700px] object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                          {/* Image Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  
+                  {/* Navigation Arrows */}
+                  <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30" />
+                  <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30" />
+                </Carousel>
+
+                {/* Floating UI Elements - Image Indicators */}
+                <div className="absolute top-6 left-6 flex space-x-2">
+                  {islandKitchenImages.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        islandCurrent === index 
+                          ? 'bg-white scale-125' 
+                          : 'bg-white/60 hover:bg-white/80'
+                      }`}
+                    />
+                  ))}
                 </div>
+
+                {/* Additional Floating Elements */}
+                <div className="absolute top-6 right-6 flex space-x-2">
+                  <div className="w-2 h-2 rounded-full bg-white/80 animate-pulse" />
+                  <div className="w-2 h-2 rounded-full bg-white/60 animate-pulse delay-150" />
+                  <div className="w-2 h-2 rounded-full bg-white/40 animate-pulse delay-300" />
+                </div>
+
+                {/* Full Screen Button - Bottom Right */}
+                <button
+                  onClick={() => setIsIslandFullScreenOpen(true)}
+                  className="absolute bottom-6 right-6 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all duration-300 hover:scale-110"
+                  title="View full screen"
+                >
+                  <Maximize2 className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </div>
@@ -180,35 +388,62 @@ export function IslandKitchenSection() {
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-light">
                 ISLAND – это профессиональная кухня с посадочными местами, работающая в открытых пространствах ТРЦ и фудмоллов.
               </p>
-              <div className="inline-flex items-center space-x-3 px-6 py-3 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20">
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                <span className="text-white font-medium">Площадь: 50-100 м²</span>
-              </div>
             </div>
             {/* Stats Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="group relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative space-y-3">
-                  <div>
-                    <div className="text-white/80 text-sm font-medium uppercase tracking-wider">Сроки открытия</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white mt-1">от 45 дней</div>
-                  </div>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+              <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
+                <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Открытия</div>
+                <div className="text-lg font-bold text-white mt-1">от 45 дней</div>
               </div>
-              <div className="group relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative space-y-3">
-                  <div>
-                    <div className="text-white/80 text-sm font-medium uppercase tracking-wider">Инвестиции</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white mt-1">От 4.5 млн ₽</div>
-                  </div>
-                </div>
+              <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
+                <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Инвестиции</div>
+                <div className="text-lg font-bold text-white mt-1">От 4.5 млн ₽</div>
+              </div>
+              <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
+                <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Площадь</div>
+                <div className="text-lg font-bold text-white mt-1">50-100 м²</div>
               </div>
             </div>
+            {/* Presentation Button */}
+            <Button className="w-full h-[70px] px-4 py-2 rounded-xl bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
+              <span className="text-white">Получить презентацию</span>
+            </Button>
           </div>
         </div>
       </div>
+
+      {/* Full Screen Image Gallery for Island Kitchen */}
+      {isIslandFullScreenOpen && (
+        <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
+          {/* Close Button */}
+          <button
+            onClick={() => setIsIslandFullScreenOpen(false)}
+            className="absolute top-4 right-4 z-50 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all duration-300"
+            aria-label="Close gallery"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+          <div className="w-full max-w-4xl">
+            <ImageGallery
+              items={islandKitchenImages.map(img => ({
+                original: img.src,
+                thumbnail: img.src,
+                originalAlt: img.alt,
+                thumbnailAlt: img.alt
+              }))}
+              startIndex={islandCurrent}
+              showPlayButton={false}
+              showFullscreenButton={false}
+              showNav={true}
+              showThumbnails={false}
+              showIndex={false}
+              slideInterval={0}
+              slideOnThumbnailOver={false}
+              additionalClass="image-gallery-fullscreen"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 } 
