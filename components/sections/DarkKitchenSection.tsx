@@ -227,15 +227,15 @@ export function DarkKitchenSection() {
 // Island kitchen images for the carousel
 const islandKitchenImages = [
   {
-    src: "/island-2.png",
+    src: "/Island-2.png",
     alt: "Modern Island Kitchen - Interior View"
   },
   {
-    src: "/island-1.png", 
+    src: "/Island-1.png", 
     alt: "Modern Island Kitchen - Equipment Setup"
   },
   {
-    src: "/island-3.png",
+    src: "/Island-3.png",
     alt: "Modern Island Kitchen - Workstation"
   }
 ];
