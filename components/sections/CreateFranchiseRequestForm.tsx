@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useCallback } from "react";
-import { sendFranchiseFileRequest } from "@/lib/apiClient";
+import { sendFranchiseFileRequest, sendPartnerDatas } from "@/lib/apiClient";
 import {Button} from "@/components/ui/button"
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,6 +13,8 @@ import {
   SelectItem,
   SelectValue,
 } from "@/components/ui/select";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { FaWhatsapp } from "react-icons/fa";
 
 const REGION_CITY_MAP: Record<string, string[]> = {
   "Казахстан": ["Алматы", "Астана", "Шымкент"],
@@ -20,6 +22,8 @@ const REGION_CITY_MAP: Record<string, string[]> = {
   "Киргизия": ["Бишкек", "Ош", "Каракол"],
 };
 const REGION_LIST = Object.keys(REGION_CITY_MAP);
+
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
 
 export const CreateFranchiseRequestForm = React.memo(function CreateFranchiseRequestForm() {
   const [form, setForm] = useState({
@@ -62,11 +66,15 @@ export const CreateFranchiseRequestForm = React.memo(function CreateFranchiseReq
     setLoading(true);
     setStatus(null);
     try {
-      const fileRes = await sendFranchiseFileRequest(form);
-      if (fileRes.success) {
+      const sendAllInformation = await sendPartnerDatas(form)
+      const fileRes = await sendFranchiseFileRequest({
+        firstName: form.firstName,
+        phone: form.phone
+      });
+      if (fileRes.success && sendAllInformation.success) {
         setStatus("Ваша заявка успешно отправлена!");
         setIsSubmitted(false);
-        window.location.replace("/submit-successful");
+        // window.location.replace("/submit-successful"); // This line is removed
       } else {
         setStatus("Ошибка при отправке. Попробуйте еще раз.");
       }
@@ -76,6 +84,35 @@ export const CreateFranchiseRequestForm = React.memo(function CreateFranchiseReq
       setLoading(false);
     }
   }, [form]);
+
+  if (status === "Ваша заявка успешно отправлена!") {
+    return (
+      <div className="w-full max-w-md mx-auto bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-md flex flex-col items-center justify-center">
+        <IoMdCheckmarkCircleOutline className="text-green-500 mb-2" size={56} />
+        <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-2 sm:mb-4">Спасибо, что выбрали нас!</h2>
+        <p className="text-base sm:text-lg text-center mb-6 text-gray-700 font-medium">
+          Ваша заявка принята и находится в обработке.<br />
+          Мы свяжемся с вами в ближайшее время по указанным контактам.<br />
+          Если хотите — напишите нам прямо сейчас в WhatsApp.
+        </p>
+        <a
+          href={`https://wa.me/${WHATSAPP_NUMBER}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold py-2 px-4 rounded-lg text-base transition-colors"
+        >
+          <FaWhatsapp size={20} /> Написать в WhatsApp
+        </a>
+        <Button
+          onClick={() => window.location.replace('/')}
+          variant="outline"
+          className="w-full text-cyan-500 hover:text-cyan-400 rounded-lg border-cyan-500 font-bold text-base sm:text-lg transition disabled:opacity-60 shadow-sm mt-2"
+        >
+          На главную
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <form

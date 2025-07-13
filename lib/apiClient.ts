@@ -11,6 +11,7 @@ const NEXT_SERVER_CHATAPP_PASSWORD = process.env.NEXT_SERVER_CHATAPP_PASSWORD;
 const NEXT_SERVER_CHATAPP_ID = process.env.NEXT_SERVER_CHATAPP_ID;
 const NEXT_PUBLIC_WHATSAPP_LICENSE_ID = process.env.NEXT_PUBLIC_WHATSAPP_LICENSE_ID;
 
+const NEXT_SERVER_DATA_COLLECTOR_CHAT = process.env.NEXT_SERVER_DATA_COLLECTOR_CHAT;
 const FRANCHISE_FILE = process.env.NEXT_PUBLIC_FRANCHISE_FILE_ABSOLUTE_PATH
 const MESSAGE_CAPTION = process.env.NEXT_PUBLIC_MESSAGE_CAPTION || "Здравствуйте! Пожалуйста, ознакомьтесь с нашим коммерческим предложением. 😊";
 
@@ -66,10 +67,42 @@ function getAuthHeaders() {
     "Accept": "application/json",
   };
 }
+type SendPartnerDatasArgs = { firstName: string; phone: string, email: string, city: string };
 
-type FranchiseRequestArgs = { firstName: string; email: string; phone: string; city: string };
+type FranchiseRequestArgs = { firstName: string; phone: string };
 
-export async function sendFranchiseFileRequest({ firstName, email, phone, city }: FranchiseRequestArgs) {
+export async function sendPartnerDatas({ firstName, phone, email, city }: SendPartnerDatasArgs) {
+  // Если токен истёк — обновить
+  if (!tokenState.accessToken || (tokenState.accessTokenEndTime && Date.now() / 1000 > tokenState.accessTokenEndTime - 60)) {
+    await getAccessToken();
+  }
+  const url = `${BASE_URL}/${NEXT_SERVER_DATA_COLLECTOR_CHAT}/messages/text`;
+  const text = `
+*🆕 Новая заявка на франшизу!*
+
+👤 *Имя:* ${firstName}
+📞 *Телефон:* ${phone}
+✉️ *Email:* ${email}
+🏙️ *Город:* ${city}
+
+🕒 _Заявка отправлена: ${new Date().toLocaleString("ru-RU")}_
+
+`;
+  const body = {
+    text: text,
+    parseMode: "markdown",
+    sender: "employee",
+    forwarded: 0,
+  };
+  const res = await fetch(url, {
+    method: "POST",
+    headers: getAuthHeaders(),
+    body: JSON.stringify(body),
+  });
+  return res.json();
+} 
+
+export async function sendFranchiseFileRequest({ firstName, phone }: FranchiseRequestArgs) {
   // Если токен истёк — обновить
   if (!tokenState.accessToken || (tokenState.accessTokenEndTime && Date.now() / 1000 > tokenState.accessTokenEndTime - 60)) {
     await getAccessToken();
