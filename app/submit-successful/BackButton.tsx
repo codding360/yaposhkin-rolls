@@ -1,12 +1,13 @@
 "use client";
+import { Button } from "@/components/ui/button";
 
 export default function BackButton() {
   return (
-    <button
+    <Button
       onClick={() => window.location.replace("/")}
-      className="w-full bg-white border border-[#0098bb] text-[#0098bb] hover:bg-[#e0f7fa] font-normal py-2 px-4 rounded-lg text-base transition-colors"
-    >
+      className="w-full py-3 rounded-lg bg-cyan-500 hover:bg-cyan-600 text-white font-bold text-base sm:text-lg transition disabled:opacity-60 shadow-sm mt-6"
+      >
       На главную
-    </button>
+    </Button>
   );
 } 

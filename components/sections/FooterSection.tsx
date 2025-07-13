@@ -1,4 +1,9 @@
 import Image from "next/image";
+
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+const CONTACT_PHONE = process.env.NEXT_PUBLIC_CONTACT_PHONE;
+const CONTACT_SITE = process.env.NEXT_PUBLIC_CONTACT_SITE;
+
 export function FooterSection() {
   return (
     <footer
@@ -17,9 +22,9 @@ export function FooterSection() {
         {/* Contact info */}
         <div className="flex flex-col items-center md:items-end text-center md:text-right gap-2">
           <span className="font-bold text-lg mb-2">Контакты</span>
-          <a href="www.yaposhkinrolls.com" className="text-white/90 hover:underline text-base transition">www.yaposhkinrolls.com</a>
-          <a href="mailto:info@yaposhkin-rolls.ru" className="text-white/90 hover:underline text-base transition">info@yaposhkin.com</a>
-          <a href="tel:+996997716666" className="text-white/90 hover:underline text-base transition">+996 (997) 71 66 66</a>
+          <a href={`https://${CONTACT_SITE}`} className="text-white/90 hover:underline text-base transition">{CONTACT_SITE}</a>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-white/90 hover:underline text-base transition">{CONTACT_EMAIL}</a>
+          <a href={`tel:${CONTACT_PHONE}`} className="text-white/90 hover:underline text-base transition">{CONTACT_PHONE}</a>
         </div>
       </div>
       <hr className="my-6 border-white/20" />

@@ -2,6 +2,8 @@ import BackButton from "./BackButton";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+
 export default function SubmitSuccessfulPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#52e0ff] via-[#0098bb] to-[#4ee6ff] px-4">
@@ -12,7 +14,7 @@ export default function SubmitSuccessfulPage() {
         <h1 className="mt-8 text-4xl sm:text-5xl font-extrabold text-center mb-4 text-white">Спасибо, что выбрали нас!</h1>
         <p className="text-lg sm:text-xl text-center mb-8 text-white/90 font-medium">Мы свяжемся с вами в ближайшее время.<br/>Если хотите — напишите нам прямо сейчас в WhatsApp!</p>
         <a
-          href="https://wa.me/79999999999"
+          href={`https://wa.me/${WHATSAPP_NUMBER}`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full mb-3 inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-normal py-2 px-4 rounded-lg text-base transition-colors"

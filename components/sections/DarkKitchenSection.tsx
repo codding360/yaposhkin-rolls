@@ -1,13 +1,10 @@
 "use client"
-import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState, useEffect } from "react";
-import { Maximize2 } from "lucide-react";
+import { Link, Maximize2 } from "lucide-react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { Button } from "@/components/ui/button";
-// import { FaShippingFast } from "react-icons/fa";
-// import { GiKitchenKnives } from "react-icons/gi";
 
 // Kitchen images for the carousel
 const kitchenImages = [
@@ -115,8 +112,9 @@ export function DarkKitchenSection() {
                     <div className="text-lg font-bold text-white mt-1">30-50 м²</div>
                   </div>
                 </div>
+
                 {/* Presentation Button */}
-                <Button className="w-full h-[70px] px-4 py-2 rounded-xl bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
+                <Button onClick={() => window.location.assign('/forms/create-franchise-request')} type="button" className="w-full h-[70px] px-4 py-2 rounded-xl bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
                   <span className="text-white">Получить презентацию</span>
                 </Button>
               </div>
@@ -391,7 +389,7 @@ export function IslandKitchenSection() {
               </div>
             </div>
             {/* Presentation Button */}
-            <Button className="w-full h-[70px] px-4 py-2 rounded-xl bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
+            <Button onClick={() => window.location.assign('/forms/create-franchise-request')} type="button" className="w-full h-[70px] px-4 py-2 rounded-xl bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
               <span className="text-white">Получить презентацию</span>
             </Button>
           </div>

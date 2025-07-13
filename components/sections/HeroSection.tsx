@@ -3,7 +3,10 @@ import { Button } from "@/components/ui/button";
 import { AppleAppStoreButton } from "@/components/ui/apple-app-store-button"
 import { PlayMarketButton } from "@/components/ui/play-market-button copy"
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter"
+import Link from 'next/link'
 
+const APPS_STORE_LINK = process.env.APPS_STORE_LINK || "https://appstore.com"
+const GOOGLE_PLAY_LINK = process.env.GOOGLE_PLAY_LINK || "https://play.google.com"
 
 export function HeroSection() {
   return (
@@ -53,8 +56,8 @@ export function HeroSection() {
             />
           </div>
           <div className="flex flex-row gap-2 sm:gap-4 w-full sm:w-auto sm:mt-0 items-center justify-center sm:justify-end z-50">
-            <AppleAppStoreButton />
-            <PlayMarketButton />
+            <AppleAppStoreButton href={APPS_STORE_LINK} />
+            <PlayMarketButton href={GOOGLE_PLAY_LINK} />
           </div>
         </header>
 
@@ -91,10 +94,11 @@ export function HeroSection() {
               className="object-contain w-full h-full pointer-events-none select-none relative z-10 w-full overflow-hidden block lg:hidden"
               priority
             />
-
-            <Button className="w-full h-[70px] px-4 py-2 rounded-full bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
-              <span className="text-white">Получить презентацию</span>
-            </Button>
+            <Link href={'/forms/create-franchise-request'}>
+              <Button type="button" className="w-full h-[70px] px-4 py-2 rounded-full bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
+                <span className="text-white">Получить презентацию</span>
+              </Button>
+            </Link>
           </div>
 
           {/* Right Content */}
