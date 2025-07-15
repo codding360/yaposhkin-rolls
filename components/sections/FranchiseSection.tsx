@@ -6,7 +6,7 @@ export function FranchiseSection() {
         {/* Background Image */}
         <div className="relative w-full h-[70vh] lg:min-h-screen">
           <Image
-            src="/franchise.png"
+            src="/franchise.webp"
             alt="Franchise sushi background"
             fill
             priority

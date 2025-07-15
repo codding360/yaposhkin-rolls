@@ -87,7 +87,7 @@ export function HeroSection() {
             </p>
 
             <Image
-              src="/rolls-md.png"
+              src="/rolls-md.webp"
               alt="Sushi roll on chopsticks"
               width={600}
               height={600}
@@ -111,7 +111,7 @@ export function HeroSection() {
 
           {/* Right Content */}
           <Image
-            src="/rolls-md.png"
+            src="/rolls-md.webp"
             alt="Sushi roll on chopsticks"
             width={706}
             height={735}

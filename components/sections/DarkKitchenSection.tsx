@@ -9,15 +9,15 @@ import { Button } from "@/components/ui/button";
 // Kitchen images for the carousel
 const kitchenImages = [
   {
-    src: "/dark-1.png",
+    src: "/dark-1.webp",
     alt: "Modern Dark Kitchen - Interior View"
   },
   {
-    src: "/dark-2.png", 
+    src: "/dark-2.webp", 
     alt: "Modern Dark Kitchen - Equipment Setup"
   },
   {
-    src: "/dark-3.png",
+    src: "/dark-3.webp",
     alt: "Modern Dark Kitchen - Workstation"
   }
 ];
@@ -230,15 +230,15 @@ export function DarkKitchenSection() {
 // Island kitchen images for the carousel
 const islandKitchenImages = [
   {
-    src: "/Island-2.png",
+    src: "/Island-2.webp",
     alt: "Modern Island Kitchen - Interior View"
   },
   {
-    src: "/Island-1.png", 
+    src: "/Island-1.webp", 
     alt: "Modern Island Kitchen - Equipment Setup"
   },
   {
-    src: "/Island-3.png",
+    src: "/Island-3.webp",
     alt: "Modern Island Kitchen - Workstation"
   }
 ];
