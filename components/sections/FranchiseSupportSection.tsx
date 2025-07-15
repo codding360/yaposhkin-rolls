@@ -5,7 +5,7 @@ const cardStyle = "group relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl b
 
 const FranchiseSupportSection = () => {
   return (
-    <section className="py-20 text-white text-center"
+    <section className="py-20 px-4 text-white text-center"
     style={{ background: "rgba(0, 152, 187, 0.85)" }}
     >
       <div className="max-w-7xl mx-auto">

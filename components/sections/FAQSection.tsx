@@ -63,7 +63,7 @@ const FAQSection = () => {
 
   return (
     <section 
-      className="py-20 text-white"
+      className="py-20 px-4 text-white"
       style={{ 
         background: "rgba(0, 152, 187, 0.85)" 
       }}

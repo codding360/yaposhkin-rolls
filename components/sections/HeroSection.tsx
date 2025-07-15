@@ -102,7 +102,7 @@ export function HeroSection() {
 
               <Button
                 type="button"
-                className="xl:w-[400px] w-full h-[70px] rounded-xl px-6 py-3 text-[24px] xs:text-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#EC661A] to-[#E73E16] text-white shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EC661A]"
+                className="xl:w-[400px] backdrop-blur-sm z-10 w-full h-[70px] rounded-xl px-6 py-3 text-[24px] xs:text-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#EC661A] to-[#E73E16] text-white shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EC661A]"
               >
                 <span className="text-white drop-shadow-sm">Получить презентацию</span>
               </Button>

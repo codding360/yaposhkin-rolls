@@ -40,7 +40,7 @@ const imageVariants = {
 
 export function SushiGallery() {
   return (
-    <section className="py-20 text-white text-center"
+    <section className="py-20 text-white text-center px-3"
       style={{ background: "rgba(0, 152, 187, 0.85)" }}
     >
       <div className="relative max-w-7xl mx-auto">
