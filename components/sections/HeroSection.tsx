@@ -10,7 +10,7 @@ const GOOGLE_PLAY_LINK = process.env.GOOGLE_PLAY_LINK || "https://play.google.co
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen">
+    <section className="relative max-w-7xl mx-auto">
 
       {/* Background Vector Images */}
       <div className="absolute inset-0 z-0 overflow-hidden lg:hidden">
@@ -47,11 +47,11 @@ export function HeroSection() {
         <header className=" mx-auto flex flex-col lg:flex-row justify-between items-center mb-5 gap-2">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 w-full sm:w-auto">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Yaposhkin Rolls Logo"
-              width={596}
+              width={200}
               height={70}
-              className="w-full md:max-w-[320px] lg:max-w-[420px] xl:max-w-[596px] h-auto object-contain"
+              className="w-full md:max-w-[320px] lg:max-w-[420px] xl:max-w-[800px] h-auto object-contain"
               priority
             />
           </div>
@@ -95,8 +95,16 @@ export function HeroSection() {
               priority
             />
             <Link href={'/forms/create-franchise-request'}>
-              <Button type="button" className="w-full h-[70px] px-4 py-2 rounded-full bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
+              {/* <Button type="button" className="w-full h-[70px] px-4 py-2 rounded-full bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
                 <span className="text-white">Получить презентацию</span>
+              </Button> */}
+
+
+              <Button
+                type="button"
+                className="xl:w-[400px] w-full h-[70px] rounded-xl px-6 py-3 text-[24px] xs:text-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#EC661A] to-[#E73E16] text-white shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EC661A]"
+              >
+                <span className="text-white drop-shadow-sm">Получить презентацию</span>
               </Button>
             </Link>
           </div>

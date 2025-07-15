@@ -10,6 +10,8 @@ import {SushiGallery} from "@/components/sections/GridGallerySection";
 import FranchiseBannerSection from "@/components/sections/FranchiseBannerSection"
 import { FAQSection } from "@/components/sections/FAQSection"
 import { FooterSection } from "@/components/sections/FooterSection"
+import { FranchiseAdvantagesSection } from "@/components/sections/FranchiseAdvantagesSection"
+import { StepsSection } from "@/components/sections/Steps"
 
  async function Page() {
   return (
@@ -21,10 +23,11 @@ import { FooterSection } from "@/components/sections/FooterSection"
       <DarkKitchenSection/>
       <img src="/seperator.png" alt="Section Separator" className="mx-auto" />
       <IslandKitchenSection/>
+      <FranchiseAdvantagesSection/>
       <FranchiseSupportSection/>
+      <StepsSection/>
       <FAQSection/>
       <SushiGallery/>
-      <img src="/seperator.png" alt="Section Separator" className="mx-auto" />
       <FooterSection/>
     </div>  
   )

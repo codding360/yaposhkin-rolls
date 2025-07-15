@@ -70,10 +70,10 @@ export function DarkKitchenSection() {
               {/* Content - Takes 5 columns */}
               <div className="lg:col-span-5 space-y-10">
                 {/* Header */}
-                <div className="space-y-6">
+                <div className="space-y-3">
                   <div className="inline-block">
                     <div className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
-                      <span className="text-white/90 text-sm font-medium tracking-wider uppercase">Новый формат</span>
+                      <span className="text-white/90 text-sm font-medium tracking-wider uppercase">Формат</span>
                     </div>
                   </div>
     
@@ -91,7 +91,7 @@ export function DarkKitchenSection() {
                 </div>
     
                 {/* Description */}
-                <div className="space-y-6">
+                <div className="space-y-3">
                   <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-light">
                     Профессиональная кухня без зала для гостей, работающая только на доставку
                   </p>
@@ -113,9 +113,12 @@ export function DarkKitchenSection() {
                   </div>
                 </div>
 
-                {/* Presentation Button */}
-                <Button onClick={() => window.location.assign('/forms/create-franchise-request')} type="button" className="w-full h-[70px] px-4 py-2 rounded-xl bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
-                  <span className="text-white">Получить презентацию</span>
+                <Button
+                  onClick={() => window.location.assign('/forms/create-franchise-request')}
+                  type="button"
+                  className="w-full h-[70px] rounded-xl px-6 py-4 text-[24px] xs:text-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#EC661A] to-[#E73E16] text-white shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EC661A]"
+                >
+                  <span className="text-white drop-shadow-sm">Получить презентацию</span>
                 </Button>
               </div>
     
@@ -274,7 +277,7 @@ export function IslandKitchenSection() {
   return (
     <section
       className="relative w-full min-h-screen py-20 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, rgba(0, 152, 187, 0.85) 0%, rgba(0, 152, 187, 0.85) 50%, #52e0ff 100%)" }}
+      style={{ background: "rgba(0, 152, 187, 0.85)" }}
       >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -348,12 +351,12 @@ export function IslandKitchenSection() {
           </div>
 
           {/* Content - Takes 5 columns (right) */}
-          <div className="lg:col-span-5 space-y-10 order-1 lg:order-2">
+          <div className="lg:col-span-5 space-y-7 order-1 lg:order-2">
             {/* Header */}
             <div className="space-y-6">
               <div className="inline-block">
                 <div className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
-                  <span className="text-white/90 text-sm font-medium tracking-wider uppercase">Новый формат</span>
+                  <span className="text-white/90 text-sm font-medium tracking-wider uppercase">Формат</span>
                 </div>
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight">
@@ -370,11 +373,11 @@ export function IslandKitchenSection() {
             {/* Description */}
             <div className="space-y-6">
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-light">
-                ISLAND – это профессиональная кухня с посадочными местами, работающая в открытых пространствах ТРЦ и фудмоллов.
+              Это новый формат кулинарного пространства с открытой кухней, объединяющий профессиональную готовку и уютную зону для гостей в ТРЦ и фудмоллах. Прозрачность процесса привлекает внимание и делает опыт посетителей особенным.
               </p>
             </div>
             {/* Stats Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-3">
               <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
                 <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Открытия</div>
                 <div className="text-lg font-bold text-white mt-1">от 45 дней</div>
@@ -388,9 +391,13 @@ export function IslandKitchenSection() {
                 <div className="text-lg font-bold text-white mt-1">50-100 м²</div>
               </div>
             </div>
-            {/* Presentation Button */}
-            <Button onClick={() => window.location.assign('/forms/create-franchise-request')} type="button" className="w-full h-[70px] px-4 py-2 rounded-xl bg-white/20 hover:bg-white/50 backdrop-blur-sm border border-white/30 px-6 py-4 text-[24px] xs:text-lg font-semibold">
-              <span className="text-white">Получить презентацию</span>
+
+            <Button
+              onClick={() => window.location.assign('/forms/create-franchise-request')}
+              type="button"
+              className="w-full h-[70px] rounded-xl px-6 py-3 text-[24px] xs:text-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#EC661A] to-[#E73E16] text-white shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EC661A]"
+            >
+              <span className="text-white drop-shadow-sm">Получить презентацию</span>
             </Button>
           </div>
         </div>

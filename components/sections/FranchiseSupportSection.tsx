@@ -5,10 +5,10 @@ const cardStyle = "group relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl b
 
 const FranchiseSupportSection = () => {
   return (
-    <section className="py-20 px-4 text-white text-center"
-    style={{ background: "linear-gradient(0deg, rgba(0, 152, 187, 0.85) 0%, #52e0ff 50%, #52e0ff 100%)" }}
+    <section className="py-20 text-white text-center"
+    style={{ background: "rgba(0, 152, 187, 0.85)" }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-extrabold mb-8">ПОДДЕРЖКА ФРАНЧАЙЗИ</h2>
         <hr className="border-t-2 border-white/30 mb-12" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">

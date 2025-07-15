@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
+import { Button } from "@/components/ui/button"
 const images = [
   '/grid/sushi1.png',
   '/grid/sushi2.png',
@@ -40,10 +40,10 @@ const imageVariants = {
 
 export function SushiGallery() {
   return (
-    <section className="py-20 px-4 text-white text-center"
-      style={{ background: "linear-gradient(180deg, rgba(0, 152, 187, 0.85) 0%, #52e0ff 50%, #52e0ff 100%)" }}
+    <section className="py-20 text-white text-center"
+      style={{ background: "rgba(0, 152, 187, 0.85)" }}
     >
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative max-w-7xl mx-auto">
 
         {/* Navigation Icons as Vectors */}
         <div className="flex justify-center items-center flex-col gap-6 mb-10 md:mb-12">
@@ -66,7 +66,7 @@ export function SushiGallery() {
             />
           </div>
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="Yaposhkin Rolls Logo"
             width={695}
             height={82}
@@ -150,6 +150,14 @@ export function SushiGallery() {
             </motion.div>
           </motion.div>
         </div>
+
+        <Button
+          onClick={() => window.location.assign('/forms/create-franchise-request')}
+          type="button"
+          className="xl:w-[400px] mt-10 w-full h-[70px] rounded-xl px-6 py-3 text-[24px] xs:text-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#EC661A] to-[#E73E16] text-white shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EC661A]"
+        >
+          <span className="text-white drop-shadow-sm">Получить презентацию</span>
+        </Button>
       </div>
     </section>
   );

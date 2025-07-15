@@ -38,19 +38,21 @@ export function FranchiseSection() {
           <div className="relative">
             <div className="space-y-4 sm:space-y-6">
               <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight">
-                ФРАНШИЗА
+                Франшиза Yaposhkin Rolls
               </h2>
 
               <div className="max-w-5xl">
-                <p className="text-lg sm:text-xl lg:text-2xl font-medium text-white/95 leading-relaxed">
+                {/* <p className="text-lg sm:text-xl lg:text-2xl font-medium text-white/95 leading-relaxed">
                   Откройте прибыльный бизнес с франшизой доставки суши{" "}
                   <span className="font-bold">Yaposhkin Rolls</span>.
-                </p>
+                </p> */}
 
                 <p className="mt-4 text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed">
-                  Мы предлагаем готовую бизнес-модель с минимальными вложениями, быстрым запуском и высокой
-                  рентабельностью. Франчайзи получают раскрученный бренд, продуманное меню, автоматизированную
-                  IT-систему, маркетинговую поддержку и полный набор инструментов для успешного старта.
+                Ваш путь к прибыльному бизнесу в сфере доставки суши! 
+                Получите готовую и проверенную бизнес-модель с высокой рентабельностью, 
+                минимальными вложениями и быстрой окупаемостью. Мы предоставляем узнаваемый бренд, 
+                оптимизированное меню, автоматизированную систему управления, эффективный маркетинг 
+                и все необходимые инструменты для вашего успеха.
                 </p>
               </div>
             </div>

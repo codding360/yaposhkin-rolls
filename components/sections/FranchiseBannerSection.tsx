@@ -38,7 +38,7 @@ export function FranchiseBannerSection() {
         width={0}
         height={0}
         sizes="100vw"
-        className="mx-auto px-6 pt-10 w-full h-auto max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-5xl"
+        className="mx-auto px-6 pt-10 w-full h-auto max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-7xl"
       />
       <Image
         src={src}

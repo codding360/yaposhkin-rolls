@@ -63,18 +63,18 @@ const FAQSection = () => {
 
   return (
     <section 
-      className="py-20 px-4 text-white"
+      className="py-20 text-white"
       style={{ 
         background: "rgba(0, 152, 187, 0.85)" 
       }}
     >
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-center">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl md:text-6xl font-extrabold mb-8 text-center">
           ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
         </h2>
         <hr className="border-t-2 border-white/30 mb-12" />
         
-        <div className="space-y-4">
+        <div className="space-y-4 max-w-4xl mx-auto">
           {faqs.map((faq, index) => (
             <div
               key={index}
