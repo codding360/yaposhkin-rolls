@@ -1,5 +1,5 @@
 "use server";
-import { BarChart2, DollarSign, ThumbsUp, Users, ReceiptRussianRuble } from "lucide-react";
+import { BarChart2, DollarSign, ThumbsUp, Users, ReceiptRussianRuble, Globe } from "lucide-react";
 import React from "react";
 
 const cardStyle = "group relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/15 transition-all duration-300 flex flex-col items-center text-center";
@@ -7,12 +7,12 @@ const cardStyle = "group relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl b
 export async function FranchiseAdvantagesSection() {
   const cards = [
     {
-      icon: <BarChart2 className="w-10 h-10 text-white" />,
-      title: "Действующий успешный бизнес",
+      icon: <Globe className="w-10 h-10 text-white" />,
+      title: "17 точек по миру — отлаженная система франшизы",
     },
     {
-      icon: <ReceiptRussianRuble className="w-10 h-10 text-white" />,
-      title: "Простой формат без ресторанов и SPA",
+      icon: <BarChart2 className="w-10 h-10 text-white" />,
+      title: "Действующий успешный бизнес",
     },
     {
       icon: <Users className="w-10 h-10 text-white" />,
@@ -25,7 +25,7 @@ export async function FranchiseAdvantagesSection() {
     {
       icon: <ThumbsUp className="w-10 h-10 text-white" />,
       title: "Высокий уровень лояльности гостей",
-    },
+    }
   ];
 
   return (
@@ -33,7 +33,7 @@ export async function FranchiseAdvantagesSection() {
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-extrabold mb-8">ПРЕИМУЩЕСТВА ФРАНШИЗЫ</h2>
         <hr className="border-t-2 border-white/30 mb-12" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center">
           {cards.map((card, idx) => (
             <div
               key={idx}

@@ -45,13 +45,15 @@ export function HeroSection() {
 
         {/* Header */}
         <header className=" mx-auto flex flex-col lg:flex-row justify-between items-center mb-5 gap-2">
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 w-full sm:w-auto">
+          <div
+            className="logo flex-1 items-center w-full justify-start relative h-12 sm:h-16 lg:h-20"
+            style={{ minWidth: '320px', maxWidth: '560px', flex: '0 0 auto' }}
+          >
             <Image
               src="/logo.svg"
               alt="Yaposhkin Rolls Logo"
-              width={200}
-              height={70}
-              className="w-full md:max-w-[320px] lg:max-w-[420px] xl:max-w-[800px] h-auto object-contain"
+              fill
+              style={{ objectFit: 'contain' }}
               priority
             />
           </div>

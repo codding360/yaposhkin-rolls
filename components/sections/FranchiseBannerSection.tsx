@@ -20,14 +20,14 @@ function useDeviceType() {
 
 export function FranchiseBannerSection() {
   const device = useDeviceType();
-  let src = "/Fhd.png";
+  let src = "/Fhd.webp";
   let digitsSrc = "/our-digits.png"
 
   if (device === 'mobile') {
-    src = "/iphone.png";
+    src = "/iphone.webp";
     digitsSrc = "our-digits-mobile.png"
   }
-  else if (device === 'tablet') src = "/ipad.png"
+  else if (device === 'tablet') src = "/ipad.webp"
 
 
   return (
