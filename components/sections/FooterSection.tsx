@@ -12,7 +12,7 @@ export function FooterSection() {
             {/* Logo and description */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left mb-6 md:mb-0">
               <span className="font-extrabold text-xl tracking-tight">Yaposhkin Rolls</span>
-              <p className="text-white/80 text-sm mt-2 max-w-xs">
+              <p className="text-white/80 text-sm mt-2 max-w-sm">
                 Ваша прибыльная франшиза доставки суши! Готовый бизнес-план, поддержка на каждом этапе, узнаваемый бренд и высокая рентабельность. Начните зарабатывать с нами!
               </p>
             </div>

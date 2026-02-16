@@ -6,7 +6,7 @@ export function FranchiseSection() {
         {/* Background Image */}
         <div className="relative w-full h-[70vh] lg:min-h-screen">
           <Image
-            src="/franchise.webp"
+            src="https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/franchise.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvZnJhbmNoaXNlLndlYnAiLCJpYXQiOjE3NzEyNTQ5MzMsImV4cCI6MTgwMjc5MDkzM30.xZKwhArZQ9pINpSfTlyPr7r6kWEEu73VPwpV99zU4_Q"
             alt="Franchise sushi background"
             fill
             priority

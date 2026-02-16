@@ -40,7 +40,6 @@ export const metadata: Metadata = {
     description: 'Доходный бизнес на доставке роллов с поддержкой',
     images: ['https://yaposhkinrolls.com/logo.jpg'],
   },
-  themeColor: '#FF6B00',
   alternates: {
     canonical: 'https://yaposhkinrolls.com/',
   }

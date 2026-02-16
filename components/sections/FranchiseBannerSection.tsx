@@ -20,14 +20,14 @@ function useDeviceType() {
 
 export function FranchiseBannerSection() {
   const device = useDeviceType();
-  let src = "/Fhd.webp";
+  let src = "https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/Fhd.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvRmhkLndlYnAiLCJpYXQiOjE3NzEyNTUxMzgsImV4cCI6MTgwMjc5MTEzOH0.jKaBfd_xV3B25GkufO8Hasg2pPz4NXAurHjEL19ZD9c";
   let digitsSrc = "/our-digits.png"
 
   if (device === 'mobile') {
-    src = "/iphone.webp";
+    src = "https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/iphone.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaXBob25lLndlYnAiLCJpYXQiOjE3NzEyNTUxNTYsImV4cCI6MTgwMjc5MTE1Nn0.AjGU92U-IVG2GgJhiHOIWq0At4OA8U7uuM9uh4iHgpk";
     digitsSrc = "our-digits-mobile.png"
   }
-  else if (device === 'tablet') src = "/ipad.webp"
+  else if (device === 'tablet') src = "https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/ipad.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaXBhZC53ZWJwIiwiaWF0IjoxNzcxMjU1MTY4LCJleHAiOjE4MDI3OTExNjh9.8MLLBTVHF_jrVJgiNbF2U8j8xXPha8ELeV9JCW5i0RU"
 
 
   return (

@@ -13,7 +13,7 @@ const FranchiseSupportSection = () => {
         <hr className="border-t-2 border-white/30 mb-12" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
           <div className={cardStyle}>
-            <Image src="/delivery.png" alt="Delivery Icon" width={200} height={200} className="mb-6 object-contain" />
+            <Image src="https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/delivery.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvZGVsaXZlcnkucG5nIiwiaWF0IjoxNzcxMjU1MzExLCJleHAiOjE4MDI3OTEzMTF9.iRBhHcbreFGb0XxYMAg69kkJTV0s-dLAnc3c_Dy-fIY" alt="Delivery Icon" width={200} height={200} className="mb-6 object-contain" />
             <h3 className="text-2xl font-extrabold mb-2 text-white/90">САЙТ / ПРИЛОЖЕНИЕ</h3>
             <p className="text-base text-start font-medium text-white/90">
               Вы получите индивидуальный сайт
@@ -24,7 +24,7 @@ const FranchiseSupportSection = () => {
             </p>
           </div>
           <div className={cardStyle}>
-          <Image src="/crm.png" alt="CRM Icon" width={200} height={200} className="mb-6 object-contain" />
+          <Image src="https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/crm.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvY3JtLnBuZyIsImlhdCI6MTc3MTI1NTMyMiwiZXhwIjoxODAyNzkxMzIyfQ.nJzJNz4m-tiUSCpA8F0AnBlu_nRgw_6yzRNf4-gbt4c" alt="CRM Icon" width={200} height={200} className="mb-6 object-contain" />
           <h3 className="text-2xl font-extrabold mb-2 text-white/90">CRM-СИСТЕМА</h3>
             <p className="text-base font-medium text-start text-white/90">
               Современная система управления
@@ -34,7 +34,7 @@ const FranchiseSupportSection = () => {
             </p>
           </div>
           <div className={cardStyle}>
-          <Image src="/marketing.png" alt="Marketing Icon" width={200} height={200} className="mb-6 object-contain" />
+          <Image src="https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/marketing.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbWFya2V0aW5nLnBuZyIsImlhdCI6MTc3MTI1NTMzMiwiZXhwIjoxODAyNzkxMzMyfQ.dJA0XtIhxeUX-cOPv05BOKi-QRYeNlBVSj_k15LpplQ" alt="Marketing Icon" width={200} height={200} className="mb-6 object-contain" />
           <h3 className="text-2xl font-extrabold mb-2 text-white/90">ЭФФЕКТИВНЫЙ<br />МАРКЕТИНГ</h3>
             <p className="text-base font-medium text-start text-white/90">
               Франчайзи получают доступ

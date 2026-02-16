@@ -9,15 +9,15 @@ import { Button } from "@/components/ui/button";
 // Kitchen images for the carousel
 const kitchenImages = [
   {
-    src: "/dark-1.webp",
+    src: "https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/dark-1.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvZGFyay0xLndlYnAiLCJpYXQiOjE3NzEyNTUxOTksImV4cCI6MTgwMjc5MTE5OX0.JgWx88bB8Qhvf_Ma3_-WwOnruN_l4xfejYQ1qznT2tI",
     alt: "Modern Dark Kitchen - Interior View"
   },
   {
-    src: "/dark-2.webp", 
+    src: "https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/dark-2.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvZGFyay0yLndlYnAiLCJpYXQiOjE3NzEyNTUyMzEsImV4cCI6MTgwMjc5MTIzMX0.xYMgc1-dN-34TriaSrsEd3UQgEbh8cl8HrYpSuKrqiI", 
     alt: "Modern Dark Kitchen - Equipment Setup"
   },
   {
-    src: "/dark-3.webp",
+    src: "https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/dark-3.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvZGFyay0zLndlYnAiLCJpYXQiOjE3NzEyNTUyNDAsImV4cCI6MTgwMjc5MTI0MH0.C4rzdQT5_MUYSBLhnPbcwVuJyYHimnBCeVyhZP1xRaI",
     alt: "Modern Dark Kitchen - Workstation"
   }
 ];
@@ -100,16 +100,16 @@ export function DarkKitchenSection() {
                 {/* Stats Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
                   <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
-                    <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Открытия</div>
-                    <div className="text-lg font-bold text-white mt-1">15-20 дней</div>
+                    <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Чистая прибыль</div>
+                    <div className="text-lg font-bold text-white mt-1">250 000 ₽</div>
                   </div>
                   <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
-                    <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Инвестиции</div>
-                    <div className="text-lg font-bold text-white mt-1">От 1.4 млн ₽</div>
+                    <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Средний оборот</div>
+                    <div className="text-lg font-bold text-white mt-1">От 1.2 млн ₽</div>
                   </div>
                   <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
-                    <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Площадь</div>
-                    <div className="text-lg font-bold text-white mt-1">30-50 м²</div>
+                    <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Окупаемость инвестиции</div>
+                    <div className="text-lg font-bold text-white mt-1">21 мес</div>
                   </div>
                 </div>
 
@@ -230,15 +230,15 @@ export function DarkKitchenSection() {
 // Island kitchen images for the carousel
 const islandKitchenImages = [
   {
-    src: "/Island-2.webp",
+    src: "https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/Island-2.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvSXNsYW5kLTIud2VicCIsImlhdCI6MTc3MTI1NTI3MCwiZXhwIjoxODAyNzkxMjcwfQ.D_p3WO2u4-nNoNDDNC9WailsMl8-U-0BNIxbyv7TDFw",
     alt: "Modern Island Kitchen - Interior View"
   },
   {
-    src: "/Island-1.webp", 
+    src: "https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/Island-1.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvSXNsYW5kLTEud2VicCIsImlhdCI6MTc3MTI1NTI4MCwiZXhwIjoxODAyNzkxMjgwfQ.nCaTW2gM5irjP-GWbJvAARCYDpkMwoqsLhYprA8tQmo", 
     alt: "Modern Island Kitchen - Equipment Setup"
   },
   {
-    src: "/Island-3.webp",
+    src: "https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/Island-1.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvSXNsYW5kLTEud2VicCIsImlhdCI6MTc3MTI1NTI4MCwiZXhwIjoxODAyNzkxMjgwfQ.nCaTW2gM5irjP-GWbJvAARCYDpkMwoqsLhYprA8tQmo",
     alt: "Modern Island Kitchen - Workstation"
   }
 ];
@@ -377,18 +377,18 @@ export function IslandKitchenSection() {
               </p>
             </div>
             {/* Stats Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
               <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
-                <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Открытия</div>
-                <div className="text-lg font-bold text-white mt-1">от 45 дней</div>
+                <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Чистая прибыль</div>
+                <div className="text-lg font-bold text-white mt-1">450 000 ₽</div>
               </div>
               <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
-                <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Инвестиции</div>
-                <div className="text-lg font-bold text-white mt-1">От 4.5 млн ₽</div>
+                <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Средний оборот</div>
+                <div className="text-lg font-bold text-white mt-1">От 1.6 млн ₽</div>
               </div>
               <div className="p-3 rounded-xl bg-white/20 backdrop-blur-xl border border-white/30 shadow-sm flex flex-col items-start">
-                <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Площадь</div>
-                <div className="text-lg font-bold text-white mt-1">50-100 м²</div>
+                <div className="text-white/70 text-xs font-medium uppercase tracking-wider">Окупаемость инвестиции</div>
+                <div className="text-lg font-bold text-white mt-1">15 мес</div>
               </div>
             </div>
 

@@ -1,82 +1,19 @@
-"use server"
+"use client"
 
-type ChatAppTokenState = {
-  accessToken: string | null;
-  accessTokenEndTime: number | null;
-  intervalStarted: boolean;
-};
 
-const NEXT_SERVER_CHATAPP_EMAIL = process.env.NEXT_SERVER_CHATAPP_EMAIL;
-const NEXT_SERVER_CHATAPP_PASSWORD = process.env.NEXT_SERVER_CHATAPP_PASSWORD;
-const NEXT_SERVER_CHATAPP_ID = process.env.NEXT_SERVER_CHATAPP_ID;
-const NEXT_PUBLIC_WHATSAPP_LICENSE_ID = process.env.NEXT_PUBLIC_WHATSAPP_LICENSE_ID;
-
-const NEXT_SERVER_DATA_COLLECTOR_CHAT = process.env.NEXT_SERVER_DATA_COLLECTOR_CHAT;
 const FRANCHISE_FILE = process.env.NEXT_PUBLIC_FRANCHISE_FILE_ABSOLUTE_PATH
 const MESSAGE_CAPTION = process.env.NEXT_PUBLIC_MESSAGE_CAPTION || "Здравствуйте! Пожалуйста, ознакомьтесь с нашим коммерческим предложением. 😊";
 
-const BASE_URL = `https://api.chatapp.online/v1/licenses/${NEXT_PUBLIC_WHATSAPP_LICENSE_ID}/messengers/grWhatsApp/chats`;
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace('+', '')
+const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN
+const ID_INSTANCE = process.env.NEXT_PUBLIC_ID_INSTANCE
+const API_URL = process.env.NEXT_PUBLIC_API_URL
 
-// Глобальные переменные для токена и интервала
-if (!(globalThis as any)._chatappTokenState) {
-  (globalThis as any)._chatappTokenState = {
-    accessToken: null,
-    accessTokenEndTime: null,
-    intervalStarted: false,
-  } as ChatAppTokenState;
-}
-const tokenState = (globalThis as any)._chatappTokenState as ChatAppTokenState;
-
-async function getAccessToken() {
-  const res = await fetch("https://api.chatapp.online/v1/tokens", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Lang": "en",
-    },
-    body: JSON.stringify({
-      email: NEXT_SERVER_CHATAPP_EMAIL,
-      password: NEXT_SERVER_CHATAPP_PASSWORD,
-      appId: NEXT_SERVER_CHATAPP_ID,
-    }),
-  });
-  const data = await res.json();
-  if (data.success && data.data?.accessToken) {
-    tokenState.accessToken = data.data.accessToken;
-    tokenState.accessTokenEndTime = data.data.accessTokenEndTime;
-    return tokenState.accessToken;
-  } else {
-    throw new Error("Failed to get access token from ChatApp API");
-  }
-}
-
-// Запускать setInterval только один раз
-if (!tokenState.intervalStarted) {
-  tokenState.intervalStarted = true;
-  // Сразу получить токен
-  getAccessToken();
-  // Обновлять раз в 23ч 55м
-  setInterval(getAccessToken, 23 * 60 * 60 * 1000 + 55 * 60 * 1000);
-}
-
-function getAuthHeaders() {
-  return {
-    "Authorization": tokenState.accessToken || "",
-    "Lang": "en",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-  };
-}
 type SendPartnerDatasArgs = { firstName: string; phone: string, email: string, city: string };
 
 type FranchiseRequestArgs = { firstName: string; phone: string };
 
 export async function sendPartnerDatas({ firstName, phone, email, city }: SendPartnerDatasArgs) {
-  // Если токен истёк — обновить
-  if (!tokenState.accessToken || (tokenState.accessTokenEndTime && Date.now() / 1000 > tokenState.accessTokenEndTime - 60)) {
-    await getAccessToken();
-  }
-  const url = `${BASE_URL}/${NEXT_SERVER_DATA_COLLECTOR_CHAT}/messages/text`;
   const text = `
 *🆕 Новая заявка на франшизу!*
 
@@ -88,39 +25,27 @@ export async function sendPartnerDatas({ firstName, phone, email, city }: SendPa
 🕒 _Заявка отправлена: ${new Date().toLocaleString("ru-RU")}_
 
 `;
-  const body = {
-    text: text,
-    parseMode: "markdown",
-    sender: "employee",
-    forwarded: 0,
-  };
-  const res = await fetch(url, {
+  console.log(API_URL)
+  const res = await fetch(`${API_URL}/waInstance${ID_INSTANCE}/sendMessage/${API_TOKEN}`, 
+    {
     method: "POST",
-    headers: getAuthHeaders(),
-    body: JSON.stringify(body),
+    body: JSON.stringify({
+      chatId: WHATSAPP_NUMBER + "@c.us", 
+      message: text,
+    }),
   });
-  return res.json();
+  return res
 } 
 
 export async function sendFranchiseFileRequest({ firstName, phone }: FranchiseRequestArgs) {
-  // Если токен истёк — обновить
-  if (!tokenState.accessToken || (tokenState.accessTokenEndTime && Date.now() / 1000 > tokenState.accessTokenEndTime - 60)) {
-    await getAccessToken();
-  }
-  const url = `${BASE_URL}/${phone}/messages/file`;
-  const body = {
-    file: FRANCHISE_FILE,
-    fileName: "franchise.pdf",
-    caption: MESSAGE_CAPTION,
-    parseMode: "markdown",
-    firstName,
-    sender: "employee",
-    forwarded: 0,
-  };
-  const res = await fetch(url, {
+  const res = await fetch(`${API_URL}/waInstance${ID_INSTANCE}/sendFileByUrl/${API_TOKEN}`, {
     method: "POST",
-    headers: getAuthHeaders(),
-    body: JSON.stringify(body),
+    body: JSON.stringify({
+      chatId: phone.replace('+', '') + "@c.us", 
+      urlFile: FRANCHISE_FILE,
+      fileName: 'franchise.pdf',
+      caption: MESSAGE_CAPTION
+    }),
   });
-  return res.json();
+  return res
 } 

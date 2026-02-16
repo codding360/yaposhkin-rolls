@@ -68,28 +68,29 @@ export function HeroSection() {
         <div className="flex block lg:flex justify-between items-center">       
           
           {/* Left Content */}
-          <div className="text-center lg:text-left lg:max-w-2xl flex flex-col lg:gap-4 gap-0">
+          <div className="text-center lg:text-left lg:max-w-2xl flex flex-col lg:gap-0 gap-0">
 
             <Image
               src="/vectors.png"
               alt="Sushi vector icons"
               width={400}
               height={100}
-              className="w-40 sm:w-64 md:w-[400px] h-auto hidden lg:block"
+              className="w-40 sm:w-64 md:w-[400px] h-auto hidden lg:block mb-2"
               priority
             />
             
-            <h2 className="text-5xl sm:text-5xl md:text-6xl font-black text-white leading-tight tracking-tight mb-4 md:mb-6">
+            <h2 className="text-5xl sm:text-5xl md:text-6xl font-black text-white leading-tight tracking-tight md:mb-6">
               ОТКРОЙТЕ <br className="block lg:hidden"/>
               ДОСТАВКУ <br className="block lg:hidden"/>РОЛЛОВ
             </h2>
-            <p className="text-[30px] xs:text-xl md:text-2xl text-white/90 mb-1 leading-[30px] md:leading-none">
-              всего за <span className="font-bold">6 недель</span> и начните получать
-              <br className="block lg:hidden"/> от <span className="font-bold">2 800 000 рублей</span><br className="block lg:hidden"/> чистой прибыли в год!
+            <p className="text-[30px] xs:text-xl md:text-2xl text-white/90 mb-8 leading-[30px] md:leading-none">
+              зарабатывайте чистыми от<span className="font-bold"> 450 000 ₽</span> в месяц
             </p>
 
+
+
             <Image
-              src="/rolls-md.webp"
+              src="https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/rolls-md.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvcm9sbHMtbWQud2VicCIsImlhdCI6MTc3MTI1NDcwNCwiZXhwIjoxODAyNzkwNzA0fQ.sGdzZPu8jXgwdimzOL907UZrA4ALpa8WIRUM_u81PEw"
               alt="Sushi roll on chopsticks"
               width={600}
               height={600}
@@ -113,7 +114,7 @@ export function HeroSection() {
 
           {/* Right Content */}
           <Image
-            src="/rolls-md.webp"
+            src="https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/rolls-md.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvcm9sbHMtbWQud2VicCIsImlhdCI6MTc3MTI1NDcwNCwiZXhwIjoxODAyNzkwNzA0fQ.sGdzZPu8jXgwdimzOL907UZrA4ALpa8WIRUM_u81PEw"
             alt="Sushi roll on chopsticks"
             width={706}
             height={735}
@@ -161,7 +162,7 @@ export function HeroSection() {
         
         <div className="lg:hidden block z-30 w-full">
           <Image
-            src="/stats.png"
+            src="https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/stats.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvc3RhdHMucG5nIiwiaWF0IjoxNzcxMjU1MTA4LCJleHAiOjE4MDI3OTExMDh9.UYparSl6s5s844n2dOOO7ZAAAGOdXvS8krNbYIMKJI0"
             alt="Stats"
             width={440}
             height={120}

@@ -71,14 +71,17 @@ export const CreateFranchiseRequestForm = React.memo(function CreateFranchiseReq
         firstName: form.firstName,
         phone: form.phone
       });
-      if (fileRes.success && sendAllInformation.success) {
+      if (sendAllInformation.ok && fileRes.ok) {
         setStatus("Ваша заявка успешно отправлена!");
         setIsSubmitted(false);
         // window.location.replace("/submit-successful"); // This line is removed
       } else {
+        console.log(fileRes.body)
+        console.log(sendAllInformation.body)
         setStatus("Ошибка при отправке. Попробуйте еще раз.");
       }
     } catch (err) {
+      console.log(err)
       setStatus("Ошибка при отправке. Попробуйте еще раз.");
     } finally {
       setLoading(false);

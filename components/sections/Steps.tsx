@@ -12,7 +12,7 @@ export function StepsSection() {
     {
       number: 1,
       title: "Заявка и интервью",
-      subtitle: "Application and interview",
+      subtitle: "",
       icon: DollarSign,
       description:
         "Подача заявки и прохождение интервью с нашими специалистами для оценки возможностей сотрудничества.",
@@ -20,30 +20,30 @@ export function StepsSection() {
     {
       number: 2,
       title: "Заключение договора и оплата",
-      subtitle: "Contract conclusion and lump sum payment",
+      subtitle: "",
       icon: FileText,
       description: "Подписание договора о сотрудничестве и внесение паушального взноса для начала работы.",
     },
     {
       number: 3,
       title: "Подготовка помещения",
-      subtitle: "(ремонт, мебель, брендирование)",
+      subtitle: "",
       icon: Wrench,
       description: "Ремонт и оборудование помещения, установка мебели и элементов брендирования согласно стандартам.",
     },
     {
       number: 4,
-      title: "Обучение команды",
-      subtitle: "Team training",
+      title: "Подбор обучение и стажировка команды",
+      subtitle: "",
       icon: GraduationCap,
       description: "Комплексное обучение персонала всем аспектам работы и стандартам обслуживания клиентов.",
     },
     {
       number: 5,
-      title: "Маркетинговый запуск и открытие",
-      subtitle: "Marketing launch and opening",
+      title: "Открытие вашей точки!",
+      subtitle: "",
       icon: Rocket,
-      description: "Проведение маркетинговой кампании и торжественное открытие нового бизнеса.",
+      description: "Проведение маркетинговой компании и торжественное открытие нового бизнеса.",
     },
   ]
 
