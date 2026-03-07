@@ -139,13 +139,13 @@ export function HeroSection() {
           <div className="text-white">
             <h3 className="text-lg xs:text-xl md:text-2xl font-bold mb-1 md:mb-2">
               {"< от "}
-              <AnimatedCounter end={3600000} duration={1.5} className="inline" />
+              <AnimatedCounter end={32000000} duration={1.5} className="inline" />
               {" ₽"}
             </h3>
             <p className="text-base md:text-lg opacity-90">
               годовой оборот всех
               <br className="hidden xs:block" />
-              филиалов Yaposhkin Rolls
+              {" "}филиалов Yaposhkin Rolls
             </p>
           </div>
           <div className="text-white">
