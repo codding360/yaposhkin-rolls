@@ -162,7 +162,7 @@ export function HeroSection() {
         
         <div className="lg:hidden block z-30 w-full">
           <Image
-            src="https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/stats.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvc3RhdHMucG5nIiwiaWF0IjoxNzcxMjU1MTA4LCJleHAiOjE4MDI3OTExMDh9.UYparSl6s5s844n2dOOO7ZAAAGOdXvS8krNbYIMKJI0"
+            src="https://mrcjahlawoimpgqrxkiw.supabase.co/storage/v1/object/sign/images/stats.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmRmMTUwZS04ZWZmLTQxMTQtYjc4Yi1lZjg1MTdlMDUzMTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvc3RhdHMucG5nIiwiaWF0IjoxNzc0MjYwMjI4LCJleHAiOjE4MDU3OTYyMjh9.00VL7Q35uWsq71SMEhh-hI27jyxp1_MSvAoT42Tnsk0"
             alt="Stats"
             width={440}
             height={120}
